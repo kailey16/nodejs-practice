@@ -1,7 +1,7 @@
 let express = require('express')
 let app = express()
 let personRoute = require('./routes/person')
-let customerRoute = 
+let customerRoute = require('./routes/customer')
 let path = require('path')
 let bodyParser = require('body-parser')
 
@@ -13,6 +13,7 @@ app.use((req, res, next) => {
   next()
 })
 app.use(personRoute)
+app.use(customerRoute)
 app.use(express.static('public'))
 
 // Handler for 404 - resource not found

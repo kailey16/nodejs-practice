@@ -21,8 +21,10 @@ router.post('/customer', (req, res) => {
         return res.status(500).send(doc)
       }
       res.status(201).send(doc)
+    })
     .catch(err => {
       res.status(500).json(err)
     })
-    })
 })
+
+module.exports = router
