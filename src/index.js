@@ -1,12 +1,14 @@
 let express = require('express')
 let app = express()
-
 let personRoute = require('./routes/person')
-
+let customerRoute = 
 let path = require('path')
+let bodyParser = require('body-parser')
+
+app.use(bodyParser.json())
 
 app.use((req, res, next) => {
-  console.log(`${new Date().toString()} => ${req.originalUrl}`)
+  console.log(`${new Date().toString()} => ${req.originalUrl}`, req.body)
   // res.send('')
   next()
 })
